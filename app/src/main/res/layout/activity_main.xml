@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/homelogo"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/container1"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/flogo1" />
+
+    <EditText
+        android:id="@+id/Loginphone"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/textviewbg"
+        android:ems="10"
+        android:fontFamily="@font/rubik"
+        android:hint="Phone"
+        android:inputType="phone"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/Loginpw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <EditText
+        android:id="@+id/Loginpw"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/textviewbg"
+        android:ems="10"
+        android:fontFamily="@font/rubik"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/LoginBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:fontFamily="@font/rubik_bold_italic"
+        android:text="Login"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/Loginphone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homelogo" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik"
+            android:text="New User?"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/toRegpage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:clickable="true"
+            android:fontFamily="@font/rubik_bold"
+            android:text="Register"
+            android:textColor="#000000"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/Adminloginbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:clickable="true"
+            android:fontFamily="@font/rubik_bold"
+            android:text="Admin Login"
+            android:textColor="#000000"
+            android:textSize="19sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/LoginBtn"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/roundedbutton1"
+        android:fontFamily="@font/rubik_medium"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

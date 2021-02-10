@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/camera"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Home">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="558dp"
+        android:layout_marginTop="40dp"
+        android:background="#F3F3F3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="1.0">
+
+        <RelativeLayout
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:scrollbars="none"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" >
+
+            <Button
+                android:id="@+id/categoriesBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                android:background="@drawable/roundedbutton1"
+                android:fontFamily="@font/rubik_light"
+                android:text="Browse Categories"
+                android:textColor="#FFFFFF" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="190dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+            app:layout_constraintVertical_bias="0.0">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+
+
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/container"
+                android:elevation="3dp"
+                android:foreground="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:srcCompat="@drawable/chair" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_toStartOf="@+id/imageView6"
+                    android:fontFamily="@font/rubik_bold"
+                    android:gravity="center|center_vertical"
+                    android:text="Nordvalla Red Wing Chair"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/textView"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="116dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center">
+
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="95dp"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_right_arrow"
+                        android:drawablePadding="2dp"
+                        android:fontFamily="@font/rubik"
+                        android:gravity="center"
+                        android:text="Shop Now" />
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:scrollbars = "horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="24dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/rubik_medium"
+        android:text="Furnished"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_account" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="85dp"
+        android:fontFamily="@font/rubik"
+        android:text="Hi, Sam"
+        android:textColor="#040404"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/rubik_bold"
+        android:text="What are you looking for today?"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="376dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/ic_search"
+        android:ems="10"
+        android:hint=" Search Product"
+        android:inputType="textPersonName"
+        android:paddingStart="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="18dp"
+        app:cardCornerRadius="1dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/title"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_logo"
+            tools:ignore="ContentDescription"
+            tools:layout_editor_absoluteX="105dp"
+            tools:layout_editor_absoluteY="38dp" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".registration">
+
+    <ImageView
+        android:id="@+id/homelogo"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/container1"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/flogo1" />
+
+    <EditText
+        android:id="@+id/RegName"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:background="@drawable/textviewbg"
+        android:ems="10"
+        android:fontFamily="@font/rubik"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/Regphone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <EditText
+        android:id="@+id/Regphone"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:background="@drawable/textviewbg"
+        android:ems="10"
+        android:inputType="phone"
+        android:fontFamily="@font/rubik"
+        android:hint="Phone Number"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/Regpw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegName" />
+
+    <EditText
+        android:id="@+id/Regpw"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:background="@drawable/textviewbg"
+        android:ems="10"
+        android:fontFamily="@font/rubik"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/RegBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Regphone" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_bold_italic"
+        android:text="Register"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/RegName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homelogo" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegBtn">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik"
+            android:text="Existing User?"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/toLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="35dp"
+            android:clickable="true"
+            android:fontFamily="@font/rubik_bold"
+            android:text="Login"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/RegBtn"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
+        android:background="@drawable/roundedbutton1"
+        android:fontFamily="@font/rubik_medium"
+        android:text="Register"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Regpw" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

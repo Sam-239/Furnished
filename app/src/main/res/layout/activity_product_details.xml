@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".product_details">
+
+    <RelativeLayout
+
+
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F3F3F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/backBtndetails"
+            android:layout_width="24dp"
+            android:layout_height="34dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_left" />
+
+        <ImageView
+            android:id="@+id/cart_btn"
+            android:layout_width="19dp"
+            android:layout_height="18dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_shopping_cart" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toStartOf="@+id/AddToCart">
+
+            <TextView
+                android:id="@+id/product_price_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/rubik_medium"
+                android:text="₹25999"
+                android:textColor="#000000"
+                android:textSize="26sp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/AddToCart"
+            android:layout_width="222dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/roundedbutton1"
+            android:fontFamily="@font/rubik_light"
+            android:padding="5dp"
+            android:text="Add to Cart"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#F3F3F3"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="700dp">
+
+            <ImageView
+                android:id="@+id/product_image_page"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/container1"
+                android:padding="15dp"
+                app:srcCompat="@drawable/chair" />
+
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/product_image_page"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp">
+
+                <TextView
+                    android:id="@+id/product_name_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="ProductTitle"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_below="@+id/rel"
+                android:layout_marginTop="0dp">
+
+                <TextView
+                    android:id="@+id/product_description_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/rubik_light"
+                    android:padding="20dp"
+                    android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+                    android:textColor="#000000"
+                    android:textSize="22sp" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
