@@ -1,36 +1,39 @@
-package com.example.furnished;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+        package com.example.furnished;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+        import androidx.annotation.NonNull;
+        import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.ImageButton;
+        import android.widget.ImageView;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.HashMap;
+        import com.google.android.gms.tasks.OnCompleteListener;
+        import com.google.android.gms.tasks.Task;
+        import com.google.firebase.database.DataSnapshot;
+        import com.google.firebase.database.DatabaseError;
+        import com.google.firebase.database.DatabaseReference;
+        import com.google.firebase.database.FirebaseDatabase;
+        import com.google.firebase.database.ValueEventListener;
+        import com.squareup.picasso.Picasso;
 
-import Models.Products;
-import Prevalent.Prevalent;
+        import java.text.SimpleDateFormat;
+        import java.util.Calendar;
+        import java.util.HashMap;
+
+        import Models.Products;
+        import Prevalent.Prevalent;
 
 public class product_details extends AppCompatActivity {
     public ImageView product_img_details,back,cartBtn;
     public TextView product_name_details,product_desc_details,product_price_details;
     private Button addtoCart;
+    private ImageButton ArBTN;
     private String Productid, imgUri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +46,19 @@ public class product_details extends AppCompatActivity {
         addtoCart = findViewById(R.id.AddToCart);
         cartBtn = findViewById(R.id.cart_btn);
         back = findViewById(R.id.backBtndetails);
+        ArBTN = findViewById(R.id.ARButton);
         Productid = getIntent().getStringExtra("pid");
 
 
+
+        ArBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(product_details.this,Camera.class);
+                intent.putExtra("pid",Productid);
+                startActivity(intent);
+            }
+        });
         cartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,7 +107,7 @@ public class product_details extends AppCompatActivity {
         cartMap.put("img",imgUri);
 
         CartRef.child("User View").child(Prevalent.currentOnlineUser.getPhone()).child("Products")
-        .child(Productid).updateChildren(cartMap)
+                .child(Productid).updateChildren(cartMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -126,14 +139,14 @@ public class product_details extends AppCompatActivity {
         Rootref.child(Productid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-             if(snapshot.exists()){
-                 Products products = snapshot.getValue(Products.class);
-                 product_name_details.setText(products.getPname());
-                 product_price_details.setText(products.getPrice());
-                 product_desc_details.setText(products.getDescription());
-                 imgUri = products.getImage();
-                 Picasso.get().load(products.getImage()).into(product_img_details);
-             }
+                if(snapshot.exists()){
+                    Products products = snapshot.getValue(Products.class);
+                    product_name_details.setText(products.getPname());
+                    product_price_details.setText(products.getPrice());
+                    product_desc_details.setText(products.getDescription());
+                    imgUri = products.getImage();
+                    Picasso.get().load(products.getImage()).into(product_img_details);
+                }
             }
 
             @Override

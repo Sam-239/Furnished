@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.furnished">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -30,6 +30,7 @@
         <activity android:name=".registration" />
         <activity android:name=".product_details" />
         <activity android:name=".browsepsofa" />
+        <activity android:name=".Camera" />
         <activity android:name=".categories" />
         <activity android:name=".Home" />
         <activity

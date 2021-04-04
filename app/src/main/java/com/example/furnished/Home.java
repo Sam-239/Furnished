@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -28,6 +29,8 @@ public class Home extends AppCompatActivity {
     private ModelRenderable modelRenderable;
     private DatabaseReference ProductsRef;
     private RecyclerView recyclerView;
+    private TextView greetuser;
+    private String Userid;
     RecyclerView.LayoutManager layoutManager;
 
 
@@ -35,6 +38,10 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Userid = getIntent().getStringExtra("uid");
+        greetuser = findViewById(R.id.userhi);
+        String username = "Hi,"+Userid;
+        greetuser.setText(username);
         ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
         Button categoriesbtn = findViewById(R.id.categoriesBtn);
         categoriesbtn.setOnClickListener(new View.OnClickListener() {
@@ -43,14 +50,14 @@ public class Home extends AppCompatActivity {
                 openCategories();
             }
         });
-
-
         recyclerView = findViewById(R.id.recycler);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
     }
+
+
 
     @Override
     protected void onStart() {
