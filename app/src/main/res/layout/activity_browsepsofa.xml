@@ -79,7 +79,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_sofa"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="900dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
         </RelativeLayout>
     </ScrollView>

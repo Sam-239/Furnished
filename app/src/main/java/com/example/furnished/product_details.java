@@ -34,7 +34,7 @@ public class product_details extends AppCompatActivity {
     public TextView product_name_details,product_desc_details,product_price_details;
     private Button addtoCart;
     private ImageButton ArBTN;
-    private String Productid, imgUri;
+    private String Productid, imgUri,Product_Price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,7 +101,7 @@ public class product_details extends AppCompatActivity {
         final HashMap<String, Object> cartMap = new HashMap<>();
         cartMap.put("pid",Productid);
         cartMap.put("pname",product_name_details.getText().toString());
-        cartMap.put("price",product_price_details.getText().toString());
+        cartMap.put("price",Product_Price);
         cartMap.put("date",SavecurrentDate);
         cartMap.put("time",SavecurrentTime);
         cartMap.put("img",imgUri);
@@ -133,7 +133,7 @@ public class product_details extends AppCompatActivity {
 
     }
 
-    private void getProductDetails(String productid) {
+    public void getProductDetails(String productid) {
         DatabaseReference Rootref = FirebaseDatabase.getInstance().getReference().child("Products");
 
         Rootref.child(Productid).addValueEventListener(new ValueEventListener() {
@@ -142,10 +142,12 @@ public class product_details extends AppCompatActivity {
                 if(snapshot.exists()){
                     Products products = snapshot.getValue(Products.class);
                     product_name_details.setText(products.getPname());
-                    product_price_details.setText(products.getPrice());
+                    product_price_details.setText(String.format("₹%s", products.getPrice()));
+                    Product_Price = products.getPrice();
                     product_desc_details.setText(products.getDescription());
                     imgUri = products.getImage();
                     Picasso.get().load(products.getImage()).into(product_img_details);
+
                 }
             }
 

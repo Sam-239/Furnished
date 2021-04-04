@@ -113,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
                             if(parentDBName.equals("Users")){
                                 Toast.makeText(MainActivity.this,"Login successful",Toast.LENGTH_SHORT).show();
                                 String username = userdata.getName();
-                                Toast.makeText(MainActivity.this,username,Toast.LENGTH_SHORT).show();
                                 Loading.dismiss();
                                 Intent intent = new Intent(MainActivity.this,Home.class);
                                 Prevalent.currentOnlineUser = userdata;

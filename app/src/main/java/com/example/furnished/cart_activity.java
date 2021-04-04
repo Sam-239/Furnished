@@ -65,9 +65,9 @@ public class cart_activity extends AppCompatActivity {
 
         FirebaseRecyclerOptions<Cart> options =
                 new FirebaseRecyclerOptions.Builder<Cart>()
-                .setQuery(CartRef.child("User View")
-                        .child(Prevalent.currentOnlineUser.getPhone())
-                .child("Products"), Cart.class)
+                        .setQuery(CartRef.child("User View")
+                                .child(Prevalent.currentOnlineUser.getPhone())
+                                .child("Products"), Cart.class)
                         .build();
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter
@@ -75,11 +75,11 @@ public class cart_activity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull Cart model) {
                 holder.txtProductname.setText(model.getPname());
-                holder.txtProductprice.setText("₹"+ model.getPrice());
+                holder.txtProductprice.setText(String.format("₹%s", model.getPrice()));
                 Picasso.get().load(model.getImg()).into(holder.cartImg);
-                int oneproducttotal = Integer.valueOf(model.getPrice());
+                int oneproducttotal = Integer.parseInt(model.getPrice());
                 cart_total = cart_total + oneproducttotal;
-                cart_price.setText(String.valueOf(cart_total));
+                cart_price.setText(String.format("₹%s", String.valueOf(cart_total)));
 
 
 
@@ -96,22 +96,22 @@ public class cart_activity extends AppCompatActivity {
                         builder.setItems(options, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
-                              if(i==0){
-                                  CartRef.child("User View")
-                                          .child(Prevalent.currentOnlineUser.getPhone())
-                                          .child("Products")
-                                          .child(model.getPid())
-                                          .removeValue()
-                                          .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                              @Override
-                                              public void onComplete(@NonNull Task<Void> task) {
-                                                if (task.isSuccessful()){
-                                                    Toast.makeText(cart_activity.this,"Product removed from cart",Toast.LENGTH_SHORT).show();
+                                if(i==0){
+                                    CartRef.child("User View")
+                                            .child(Prevalent.currentOnlineUser.getPhone())
+                                            .child("Products")
+                                            .child(model.getPid())
+                                            .removeValue()
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()){
+                                                        Toast.makeText(cart_activity.this,"Product removed from cart",Toast.LENGTH_SHORT).show();
 
+                                                    }
                                                 }
-                                              }
-                                          });
-                              }
+                                            });
+                                }
                             }
                         });
                         builder.show();

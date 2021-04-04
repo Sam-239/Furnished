@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -31,6 +32,7 @@ public class Home extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView greetuser;
     private String Userid;
+    private ImageView cart;
     RecyclerView.LayoutManager layoutManager;
 
 
@@ -39,6 +41,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Userid = getIntent().getStringExtra("uid");
+        cart = findViewById(R.id.carthome);
         greetuser = findViewById(R.id.userhi);
         String username = "Hi,"+Userid;
         greetuser.setText(username);
@@ -55,6 +58,13 @@ public class Home extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this,cart_activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -72,7 +82,7 @@ public class Home extends AppCompatActivity {
                     protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull Products model) {
                         holder.Product_name.setText(model.getPname());
                         //holder.Product_description.setText(model.getDescription());
-                        holder.Product_price.setText("₹" + model.getPrice());
+                        holder.Product_price.setText(String.format("₹%s", model.getPrice()));
                         Picasso.get().load(model.getImage()).into(holder.Product_image);
 
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
