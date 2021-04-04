@@ -22,7 +22,7 @@
         android:gravity="center"
         android:text="Product Name"
         android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
     <TextView
         android:id="@+id/product_price_cart"
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
         android:gravity="center"
         android:text="Product Name"
         android:textColor="#000000"
-        android:textSize="15sp" />
+        android:textSize="14sp" />
 
     <ImageView
         android:id="@+id/cart_product_image"

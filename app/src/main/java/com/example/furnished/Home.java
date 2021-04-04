@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -30,9 +31,10 @@ public class Home extends AppCompatActivity {
     private ModelRenderable modelRenderable;
     private DatabaseReference ProductsRef;
     private RecyclerView recyclerView;
-    private TextView greetuser;
+    private TextView greetuser,shopnow;
     private String Userid;
     private ImageView cart;
+    private RelativeLayout Buttontochair;
     RecyclerView.LayoutManager layoutManager;
 
 
@@ -41,7 +43,9 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Userid = getIntent().getStringExtra("uid");
+        Buttontochair = findViewById(R.id.buttontochair);
         cart = findViewById(R.id.carthome);
+        shopnow = findViewById(R.id.shopnow);
         greetuser = findViewById(R.id.userhi);
         String username = "Hi,"+Userid;
         greetuser.setText(username);
@@ -62,6 +66,23 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this,cart_activity.class);
+                startActivity(intent);
+            }
+
+        });
+    Buttontochair.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(Home.this,product_details.class);
+            intent.putExtra("pid","Mar 20, 202111:45:50 AM");
+            startActivity(intent);
+        }
+    });
+      shopnow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this,product_details.class);
+                intent.putExtra("pid","Mar 20, 202111:45:50 AM");
                 startActivity(intent);
             }
         });

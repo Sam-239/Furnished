@@ -68,8 +68,6 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="15dp"
-
-
                 android:layout_marginEnd="25dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/container"
@@ -102,6 +100,7 @@
                     android:textSize="24sp" />
 
                 <RelativeLayout
+                    android:id="@+id/buttontochair"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@+id/textView"
@@ -114,11 +113,12 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:clickable="true">
 
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/shopnow"
                         android:layout_width="95dp"
                         android:layout_height="match_parent"
                         android:clickable="true"
