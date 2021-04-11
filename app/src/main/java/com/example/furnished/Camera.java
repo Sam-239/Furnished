@@ -1,5 +1,6 @@
 package com.example.furnished;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.ColorSpace;
 import android.net.Uri;
@@ -31,7 +32,7 @@ public class Camera extends AppCompatActivity {
     private String ProductId;
     private ArFragment arFragment;
     private ModelRenderable renderable;
-
+    private ProgressDialog Loading;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,7 @@ public class Camera extends AppCompatActivity {
     }
 
     private void displayModel() {
+
         FirebaseApp.initializeApp(this);
         StorageReference modelRef = FirebaseStorage.getInstance().getReference().child("Product AR files");
         String stringBuilder = this.ProductId +".glb";
