@@ -24,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/searchinput"
         app:layout_constraintVertical_bias="1.0">
 
         <RelativeLayout
@@ -215,29 +215,41 @@
         android:text="What are you looking for today?"
         android:textColor="#000000"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/SearchButtonClickable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userhi"
         app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/editText"
+    <RelativeLayout
+        android:id="@+id/SearchButtonClickable"
         android:layout_width="376dp"
         android:layout_height="55dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/custom_input"
-        android:drawableLeft="@drawable/ic_search"
         android:ems="10"
-        android:hint=" Search Product"
         android:fontFamily="@font/inter"
         android:inputType="textPersonName"
+        android:clickable="true"
         android:paddingStart="5dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search Product"
+            android:textSize="20sp"
+            android:fontFamily="@font/intermedium"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:drawablePadding="4dp"
+            app:drawableStartCompat="@drawable/ic_search" />
+
+    </RelativeLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="29dp"

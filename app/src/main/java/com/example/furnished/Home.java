@@ -34,7 +34,7 @@ public class Home extends AppCompatActivity {
     private TextView greetuser,shopnow;
     private String Userid;
     private ImageView cart;
-    private RelativeLayout Buttontochair;
+    private RelativeLayout Buttontochair, SearchClickable;
     RecyclerView.LayoutManager layoutManager;
 
 
@@ -42,6 +42,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        SearchClickable = findViewById(R.id.SearchButtonClickable);
         Userid = getIntent().getStringExtra("uid");
         Buttontochair = findViewById(R.id.buttontochair);
         cart = findViewById(R.id.carthome);
@@ -62,6 +63,13 @@ public class Home extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
+        SearchClickable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, search_activity.class);
+                startActivity(intent);
+            }
+        });
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
