@@ -80,7 +80,7 @@ private String SeachText;
                     @NonNull
                     @Override
                     public ProductViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
-                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_layout, parent, false);
+                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_layout_pages, parent, false);
                         ProductViewHolder holder = new ProductViewHolder(view);
                         return holder;
                     }

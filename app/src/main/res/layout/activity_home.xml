@@ -24,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchinput"
+        app:layout_constraintTop_toBottomOf="@+id/SearchButtonClickable"
         app:layout_constraintVertical_bias="1.0">
 
         <RelativeLayout
@@ -219,19 +219,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userhi"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/userhi" />
 
     <RelativeLayout
         android:id="@+id/SearchButtonClickable"
         android:layout_width="376dp"
         android:layout_height="55dp"
-        android:layout_marginTop="10dp"
         android:background="@drawable/custom_input"
+        android:clickable="true"
         android:ems="10"
         android:fontFamily="@font/inter"
         android:inputType="textPersonName"
-        android:clickable="true"
         android:paddingStart="5dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -241,12 +239,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search Product"
-            android:textSize="20sp"
-            android:fontFamily="@font/intermedium"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
             android:drawablePadding="4dp"
+            android:fontFamily="@font/intermedium"
+            android:text="Search Product"
+            android:textSize="18sp"
             app:drawableStartCompat="@drawable/ic_search" />
 
     </RelativeLayout>
